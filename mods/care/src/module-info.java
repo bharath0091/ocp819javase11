@@ -1,5 +1,5 @@
-module zoo.aniaml.care {
+module zoo.animal.care {
 //    requires kotlin.stdlib;
-    requires zoo.animal.feeding;
+    requires transitive zoo.animal.feeding;
     exports zoo.animal.care.medical;
 }

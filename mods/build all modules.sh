@@ -19,7 +19,7 @@ rm -r mods
 mkdir mods
 
 #package
-jar -cvf mods/zoo.znimal.feeding.jar -C feeding/src .
+jar -cvf mods/zoo.animal.feeding.jar -C feeding/src .
 
 #run main class in the module
 java -p mods -m zoo.animal.feeding/zoo.animal.feeding.Task
@@ -39,6 +39,14 @@ jar -cvf mods/zoo.animal.care.jar -C care/src .
 
 echo compiling talks module
 
-javac -p mods -d talks/src talks/src/zoo/animal/talks/content/*.java talks/src/zoo/animal/talks/media/*.java talks/src/zoo/animal/talks/schedule/*.java
+javac -p mods -d talks/src talks/src/zoo/animal/talks/content/*.java talks/src/zoo/animal/talks/media/*.java talks/src/zoo/animal/talks/schedule/*.java talks/src/module-info.java
 
 jar -cvf mods/zoo.animal.talks.jar -C talks/src .
+
+############staff##########
+
+echo compiling staff module
+
+javac -p mods -d staff/src staff/src/zoo/staff/*.java staff/src/module-info.java
+
+jar -cvf mods/zoo.staff.jar -C staff/src .
